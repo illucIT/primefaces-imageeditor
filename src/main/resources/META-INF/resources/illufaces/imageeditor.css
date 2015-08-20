@@ -1,0 +1,47 @@
+.ui-image-editor-canvas-container {
+	margin-top: 2px;
+	padding: 6px;
+	text-align: center;
+	overflow: auto;
+}
+
+.ui-image-editor-canvas-container .canvas-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+canvas.imageEditor {
+	border: 1px solid #aaaaaa;
+}
+
+.ui-icon-mirror-horizontal {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+.ui-icon.ui-icon-imageeditor {
+	background-image:url("#{resource['illufaces:images/imageeditor-icons.png']}") !important;
+	border-radius: 0;
+}
+
+.ui-icon.ui-icon-rect {
+	background-position: -0px -0px;
+}
+
+.ui-icon.ui-icon-ellipse {
+	background-position: -16px -0px;
+}
+
+.ui-icon.ui-icon-line {
+	background-position: -32px -0px;
+}
+
+.ui-image-editor .ui-color-chooser {
+	vertical-align: top;
+	height: 2.3em;
+	padding: 6px;
+}

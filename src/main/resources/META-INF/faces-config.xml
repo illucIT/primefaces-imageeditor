@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+	<component>
+		<component-type>com.illucit.faces.component.ImageEditor</component-type>
+		<component-class>com.illucit.faces.component.imageeditor.ImageEditor</component-class>
+	</component>
+	<render-kit>
+		<renderer>
+			<component-family>com.illucit.faces.component</component-family>
+			<renderer-type>com.illucit.faces.component.ImageEditorRenderer</renderer-type>
+			<renderer-class>com.illucit.faces.component.imageeditor.ImageEditorRenderer</renderer-class>
+		</renderer>
+	</render-kit>
+
+</faces-config>
