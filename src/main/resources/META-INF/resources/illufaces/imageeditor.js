@@ -46,7 +46,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 			// Settings for new shapes
 			shapeType: 'rect',
 			strokeSize: 5,
-			color: '#000000',
+			color: this.colorChooser.val(),
 			
 			// Drawing
 			down: false,
