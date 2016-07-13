@@ -4,6 +4,7 @@ import javax.faces.application.Application;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIPanel;
 import javax.faces.component.UISelectItem;
+import javax.faces.component.html.HtmlOutputText;
 import javax.faces.view.facelets.ComponentConfig;
 import javax.faces.view.facelets.ComponentHandler;
 import javax.faces.view.facelets.FaceletContext;
@@ -14,8 +15,6 @@ import org.primefaces.component.button.Button;
 import org.primefaces.component.selectonebutton.SelectOneButton;
 import org.primefaces.component.toolbar.Toolbar;
 import org.primefaces.facelets.MethodRule;
-
-import com.sun.faces.facelets.compiler.UILiteralText;
 
 /**
  * Component Handler for Image Editor component.
@@ -65,7 +64,7 @@ public class ImageEditorComponentHandler extends ComponentHandler {
 		addButton(app, c, leftPanelGroup, "clear-button", "ui-icon-trash", null);
 
 		// ||
-		leftPanelGroup.getChildren().add(createSeparator());
+		leftPanelGroup.getChildren().add(createSeparator(app));
 
 		// Line
 
@@ -80,16 +79,18 @@ public class ImageEditorComponentHandler extends ComponentHandler {
 		leftPanelGroup.getChildren().add(drawSelection);
 
 		// ||
-		leftPanelGroup.getChildren().add(createSeparator());
+		leftPanelGroup.getChildren().add(createSeparator(app));
 
 		// Color Picker
-		UILiteralText colorChooser = new UILiteralText("<input type=\"color\" value=\"#" + ed.getInitialColor()
+		HtmlOutputText colorChooser = (HtmlOutputText) app.createComponent(HtmlOutputText.COMPONENT_TYPE);
+		colorChooser.setValue("<input type=\"color\" value=\"#" + ed.getInitialColor()
 				+ "\" class=\"ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only"
 				+ " ui-color-chooser\" />");
+		colorChooser.setEscape(false);
 		leftPanelGroup.getChildren().add(colorChooser);
 
 		// ||
-		leftPanelGroup.getChildren().add(createSeparator());
+		leftPanelGroup.getChildren().add(createSeparator(app));
 
 		// Rotate
 		addButton(app, c, leftPanelGroup, "rotate-ccw-button", "ui-icon-arrowreturnthick-1-w", null);
@@ -97,7 +98,7 @@ public class ImageEditorComponentHandler extends ComponentHandler {
 				null);
 
 		// ||
-		leftPanelGroup.getChildren().add(createSeparator());
+		leftPanelGroup.getChildren().add(createSeparator(app));
 
 		// Undo Button
 		addButton(app, c, leftPanelGroup, "undo-button", "ui-icon-arrowrefresh-1-s ui-icon-mirror-horizontal", null);
@@ -137,9 +138,12 @@ public class ImageEditorComponentHandler extends ComponentHandler {
 		panel.getChildren().add(btn);
 	}
 
-	private UIComponent createSeparator() {
-		return new UILiteralText("<span class=\"ui-separator\"><span class=\"ui-icon ui-icon-grip-dotted-vertical\">"
+	private UIComponent createSeparator(Application app) {
+		HtmlOutputText separator = (HtmlOutputText) app.createComponent(HtmlOutputText.COMPONENT_TYPE);
+		separator.setEscape(false);
+		separator.setValue("<span class=\"ui-separator\"><span class=\"ui-icon ui-icon-grip-dotted-vertical\">"
 				+ "</span></span>");
+		return separator;
 	}
 
 }

@@ -16,7 +16,6 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 		this.colorChooser = this.jq.find('input[type=color]');
 		
 		this.form = this.jq.closest('form');
-		this.canvasContainer = this.jq.find('.ui-image-editor-canvas-container');
 
 		if (refreshOnly !== true) {
 			this.initState();
@@ -40,8 +39,8 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 	
 	initState : function() {
 		this.state = {
-			// Visisble shapes
-			shapes: new Array(),
+			// Visible shapes
+			shapes: [],
 			
 			// Settings for new shapes
 			shapeType: 'rect',
@@ -61,10 +60,10 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 	},
 	
 	refreshState : function() {
-		this.state.shapes = new Array();
+		this.state.shapes = [];
 		
 		// Mark currently selected shape in refreshed UI
-		this.selectShape(this.state.shapeType)
+		this.selectShape(this.state.shapeType);
 		
 		// Restore current color
 		this.colorChooser.val(this.state.color);
@@ -167,7 +166,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 
 	clear : function() {
 		this.canvas.clear();
-		this.state.shapes = new Array();
+		this.state.shapes = [];
 	},
 	
 	onMouseDown : function(event) {
@@ -234,6 +233,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 		var shape = this.state.shape;
 		var shapeType = this.state.shapeType;
 		var pointer = this.canvas.getPointer(event.e);
+		var left, top;
 		
 		if (!this.state.down || !shape) {
 			return;
@@ -251,8 +251,8 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 			var width = Math.abs(pointer.x - this.state.startX);
 			var height = Math.abs(pointer.y - this.state.startY);
 			
-			var left = Math.min(pointer.x, this.state.startX);
-			var top = Math.min(pointer.y, this.state.startY);
+			left = Math.min(pointer.x, this.state.startX);
+			top = Math.min(pointer.y, this.state.startY);
 			
 			shape.set({
 				left   : left,
@@ -266,14 +266,14 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 			var rx = Math.abs(pointer.x - this.state.startX) / 2;
 			var ry = Math.abs(pointer.y - this.state.startY) / 2;
 			
-			var left = Math.min(pointer.x, this.state.startX);
-			var top = Math.min(pointer.y, this.state.startY);
+			left = Math.min(pointer.x, this.state.startX);
+			top = Math.min(pointer.y, this.state.startY);
 			
 			shape.set({
 				left : left,
 				top  : top,
 				rx   : rx,
-				ry   : ry,
+				ry   : ry
 			});
 			break;
 		}
@@ -289,7 +289,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 	rotateClockwise : function() {
 		this._rotateCanvas(90);
 		$.each(this.state.shapes, function (index, shape) {
-			var height = this.canvas.getWidth(); // Canvas is already rotated
+			var height = shape.canvas.getWidth(); // Canvas is already rotated
 			switch(shape.type) {
 			case 'ellipse':
 				shape.set({
@@ -325,7 +325,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 	rotateCounterClockwise : function() {
 		this._rotateCanvas(-90);
 		$.each(this.state.shapes, function (index, shape) {
-			var width = this.canvas.getHeight(); // Canvas is already rotated
+			var width = shape.canvas.getHeight(); // Canvas is already rotated
 			switch(shape.type) {
 			case 'ellipse':
 				shape.set({
@@ -383,7 +383,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 
 		var options = {
 			source : this.id,
-			process : this.id,
+			process : this.id
 		};
 		
 		var $this = this;
@@ -409,7 +409,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 				.removeAttr('disabled');
 			var label = $this.saveButton.find('span.ui-button-text');
 			label.text(label.data('originalLabel'));
-		}
+		};
 		
 		options.onstart = function() {
 			// Disable Save Button
@@ -420,7 +420,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 			var label = $this.saveButton.find('span.ui-button-text');
 			label.data('originalLabel', label.text());
 			label.text(label.text() + " ...");
-		}
+		};
 
 		options.params = [ {
 			name : this.id + '_save',
@@ -434,7 +434,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 		var options = {
 			format: 'jpeg',
 			quality: 1
-		}
+		};
 		return this.canvas.toDataURL(options);
 	}
 

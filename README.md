@@ -11,7 +11,7 @@ commonly used [PrimeFaces](http://www.primefaces.org) widget library.
 **Copyright**: illucIT Software GmbH  
 **Website**: [illucit.com](http://www.illucit.com)  
 **License**: Apache License 2.0 (see LICENSE file)  
-**Current Version**: 1.0.1
+**Current Version**: 1.0.2
 
 Compatibility:
 --------------
