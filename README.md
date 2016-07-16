@@ -7,35 +7,22 @@ About
 This package provides a JSF (Java Server Faces) component *ImageEditor* as addition to the
 commonly used [PrimeFaces](http://www.primefaces.org) widget library.
 
-**Author**: Christian Simon  
+**Authors**: Christian Simon <[simon@illucit.com](mailto:simon@illucit.com)>, Daniel Wieth <[wieth@illucit.com](mailto:wieth@illucit.com)>  
 **Copyright**: illucIT Software GmbH  
-**Website**: [illucit.com](http://www.illucit.com)  
-**License**: Apache License 2.0 (see LICENSE file)  
-**Current Version**: 1.0.2
+**URL**: [www.illucit.com](https://www.illucit.com)  
+**License**: [The Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
+**Current Version**: 1.0.3
 
 Compatibility:
 --------------
 
 *ImageEditor* is written for and tested with **PrimeFaces 5.2** and **JSF 2.2**.
-Due to changes in the PrimeFaces API for streamed data, the library is not compatible with earlies PrimeFaces versions without modifications.
+Due to changes in the PrimeFaces API for streamed data, the library is not compatible with earlier PrimeFaces versions without modifications.
 
 Setup
 -----
 
-The *ImageEditor*  component can either be downloaded directly on Github or included via Maven.
-
-If you want to use Maven to add the library to your web project, you first need to add the public illucIT Maven Repository, as the library is not published on Maven Central, yet.
-
-	<repositories>
-		<repository>
-			<id>illucit</id>
-			<name>illucIT Maven Repository</name>
-			<url>http://repository.illucit.com</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-	</repositories>
+The *ImageEditor*  component can either be downloaded directly on GitHub or included via Maven.
 
 Then just add the Maven artifact to your dependencies:
 

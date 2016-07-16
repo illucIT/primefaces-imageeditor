@@ -7,23 +7,27 @@
 	<parent>
 		<groupId>com.illucit</groupId>
 		<artifactId>illucit-parent</artifactId>
-		<version>2</version>
+		<version>3</version>
 	</parent>
 	<artifactId>primefaces-imageeditor</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<packaging>jar</packaging>
 
-	<name>Primefaces ImageEditor Component</name>
-	<description>Component for Primefaces which provides an image editor for painting into images</description>
+	<name>PrimeFaces ImageEditor Component</name>
+	<description>Component for PrimeFaces which provides an image editor for painting into images</description>
+	<url>https://www.illucit.com</url>
 
-	<url>http://www.illucit.com</url>
-	<licenses>
-		<license>
-			<name>Apache License, Version 2.0</name>
-			<distribution>repo</distribution>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-		</license>
-	</licenses>
+	<organization>
+		<name>illucIT Software GmbH</name>
+		<url>https://www.illucit.com</url>
+	</organization>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
 	<scm>
 		<connection>scm:git:${scm.connection}</connection>
@@ -33,16 +37,20 @@
 
 	<developers>
 		<developer>
-			<id>csimon</id>
+			<id>metaxmx</id>
 			<name>Christian Simon</name>
 			<email>simon@illucit.com</email>
 			<url>https://github.com/metaxmx</url>
+			<organization>illucIT Software GmbH</organization>
+			<organizationUrl>https://www.illucit.com</organizationUrl>
 		</developer>
 		<developer>
-			<id>dwieth</id>
+			<id>danielwieth</id>
 			<name>Daniel Wieth</name>
 			<email>wieth@illucit.com</email>
 			<url>https://github.com/danielwieth</url>
+			<organization>illucIT Software GmbH</organization>
+			<organizationUrl>https://www.illucit.com</organizationUrl>
 		</developer>
 	</developers>
 
@@ -90,20 +98,5 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<finalName>${project.artifactId}</finalName>
-	</build>
-
-	<repositories>
-		<repository>
-			<id>illucit</id>
-			<name>illucIT Maven Repository</name>
-			<url>http://repository.illucit.com</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-	</repositories>
 
 </project>
