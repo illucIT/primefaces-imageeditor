@@ -21,7 +21,7 @@ import org.primefaces.component.api.Widget;
 @ResourceDependencies({
 	@ResourceDependency(library="primefaces", name="jquery/jquery.js"),
 	@ResourceDependency(library="primefaces", name="primefaces.js"),
-	@ResourceDependency(library="webjars/fabric.js/1.4.12", name="fabric.js"),
+	@ResourceDependency(library="webjars", name="fabric.js/1.4.12/fabric.js"),
 	@ResourceDependency(library="illufaces", name="imageeditor.js"),
 	@ResourceDependency(library="illufaces", name="imageeditor.css")
 })
