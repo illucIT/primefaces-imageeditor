@@ -10,7 +10,7 @@ commonly used [PrimeFaces](http://www.primefaces.org) widget library.
 **Authors**: Christian Simon <[simon@illucit.com](mailto:simon@illucit.com)>, Daniel Wieth <[wieth@illucit.com](mailto:wieth@illucit.com)>  
 **Copyright**: illucIT Software GmbH  
 **URL**: [www.illucit.com](https://www.illucit.com)  
-**License**: [The Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
+**License**: [The Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)  
 **Current Version**: 1.1.0
 
 Compatibility:
