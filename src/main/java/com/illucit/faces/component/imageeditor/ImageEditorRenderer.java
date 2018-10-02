@@ -11,7 +11,7 @@ import javax.faces.context.ResponseWriter;
 
 import org.primefaces.renderkit.CoreRenderer;
 import org.primefaces.util.Base64;
-import org.primefaces.util.DynamicResourceBuilder;
+import org.primefaces.util.DynamicContentSrcBuilder;
 import org.primefaces.util.WidgetBuilder;
 
 /**
@@ -80,7 +80,7 @@ public class ImageEditorRenderer extends CoreRenderer {
 
 	protected String getImageSrc(FacesContext context, ImageEditor editor) {
 		try {
-			return DynamicResourceBuilder.build(context, editor.getValue(), editor, false, STREAMED_CONTENT);
+			return DynamicContentSrcBuilder.build(context, editor.getValue(), editor, false, STREAMED_CONTENT, true);
 		} catch (UnsupportedEncodingException e) {
 			throw new RuntimeException(e);
 		}

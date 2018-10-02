@@ -10,7 +10,7 @@
 		<version>3</version>
 	</parent>
 	<artifactId>primefaces-imageeditor</artifactId>
-	<version>1.1.0</version>
+	<version>2.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>PrimeFaces ImageEditor Component</name>
@@ -60,21 +60,23 @@
 		<scm.url>https://github.com/illucIT/primefaces-imageeditor</scm.url>
 
 		<!-- Primefaces version -->
-		<version.primefaces>5.2</version.primefaces>
-
-		<!-- JSF dependency versions -->
-		<version.faces>2.2.0</version.faces>
-		<version.el>2.2</version.el>
+		<version.primefaces>6.2</version.primefaces>
 
 		<!-- Fabric.js Version -->
 		<version.fabricjs>1.4.12</version.fabricjs>
 
 		<!-- maven-compiler-plugin -->
-		<maven.compiler.target>1.7</maven.compiler.target>
-		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
@@ -84,18 +86,6 @@
 			<groupId>org.webjars</groupId>
 			<artifactId>fabric.js</artifactId>
 			<version>${version.fabricjs}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>javax.faces</artifactId>
-			<version>${version.faces}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.el</groupId>
-			<artifactId>el-api</artifactId>
-			<version>${version.el}</version>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
