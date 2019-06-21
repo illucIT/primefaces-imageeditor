@@ -4,13 +4,13 @@ import static org.primefaces.application.resource.DynamicContentType.STREAMED_CO
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.Base64;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
 import org.primefaces.renderkit.CoreRenderer;
-import org.primefaces.util.Base64;
 import org.primefaces.util.DynamicContentSrcBuilder;
 import org.primefaces.util.WidgetBuilder;
 
@@ -95,7 +95,7 @@ public class ImageEditorRenderer extends CoreRenderer {
 			if (dataUrl != null) {
 				String encodingPrefix = "base64,";
 				int contentStartIndex = dataUrl.indexOf(encodingPrefix) + encodingPrefix.length();
-				byte[] imageData = Base64.decode(dataUrl.substring(contentStartIndex));
+				byte[] imageData = Base64.getDecoder().decode(dataUrl.substring(contentStartIndex));
 				imageEditor.setTransient(true);
 				imageEditor.queueEvent(new ImageEditedEvent(imageEditor, new InMemoryUploadedFile(imageData,
 						"image.jpg", "image/jpg")));

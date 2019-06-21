@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 import org.primefaces.model.UploadedFile;
 
@@ -41,6 +42,11 @@ public class InMemoryUploadedFile implements UploadedFile {
 	@Override
 	public String getFileName() {
 		return filename;
+	}
+
+	@Override
+	public List<String> getFileNames() {
+		return null;
 	}
 
 	@Override
