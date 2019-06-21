@@ -9,18 +9,18 @@ About
 This package provides a JSF (Java Server Faces) component *ImageEditor* as addition to the
 commonly used [PrimeFaces](http://www.primefaces.org) widget library.
 
-**Authors**: Christian Simon <[simon@illucit.com](mailto:simon@illucit.com)>, Daniel Wieth <[wieth@illucit.com](mailto:wieth@illucit.com)>  
+**Authors**: Christian Simon <[simon@illucit.com](mailto:simon@illucit.com)>, Christian Ott <[ott@illucit.com](mailto:ott@illucit.com)>  
 **Copyright**: illucIT Software GmbH  
 **URL**: [www.illucit.com](https://www.illucit.com)  
 **License**: [The Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)  
-**Current Version**: 2.0.0
+**Current Version**: 2.1.0
 
 ![Screenshot](screenshot.png)
 
 Compatibility:
 --------------
 
-*ImageEditor* is written for and tested with **PrimeFaces 6.2** and **JSF 2.3** (also backwards compatible to JSF 2.2).
+*ImageEditor* is written for and tested with **PrimeFaces 7.0** and **JSF 2.3** (also backwards compatible to JSF 2.2).
 Due to changes in the PrimeFaces API for streamed data, the library is not compatible with earlier PrimeFaces versions without modifications.
 
 Example
