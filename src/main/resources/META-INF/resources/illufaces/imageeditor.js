@@ -25,8 +25,6 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 		this.initializeCanvas();
 		this.bindEvents();
 		this.skinButtons();
-		
-		console.log("Current State: ", this.state);
 	},
 	
 	refresh : function(cfg) {

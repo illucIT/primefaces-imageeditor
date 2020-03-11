@@ -79,11 +79,7 @@ public class ImageEditorRenderer extends CoreRenderer {
 	}
 
 	protected String getImageSrc(FacesContext context, ImageEditor editor) {
-		try {
-			return DynamicContentSrcBuilder.build(context, editor.getValue(), editor, false, STREAMED_CONTENT, true);
-		} catch (UnsupportedEncodingException e) {
-			throw new RuntimeException(e);
-		}
+		return DynamicContentSrcBuilder.build(context, editor.getValue(), editor, false, STREAMED_CONTENT, true);
 	}
 
 	@Override

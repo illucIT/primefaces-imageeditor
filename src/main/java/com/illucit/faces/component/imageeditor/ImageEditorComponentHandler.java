@@ -33,7 +33,6 @@ public class ImageEditorComponentHandler extends ComponentHandler {
 		super(config);
 	}
 
-	@SuppressWarnings("rawtypes")
 	@Override
 	protected MetaRuleset createMetaRuleset(Class type) {
 		MetaRuleset metaRuleset = super.createMetaRuleset(type);
