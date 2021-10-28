@@ -36,7 +36,7 @@ public class InMemoryUploadedFile implements UploadedFile {
     }
 
     @Override
-    public InputStream getInputStream() throws IOException {
+    public InputStream getInputStream() {
         return new ByteArrayInputStream(data);
     }
 
@@ -63,4 +63,7 @@ public class InMemoryUploadedFile implements UploadedFile {
         }
     }
 
+    @Override
+    public void delete() {
+    }
 }

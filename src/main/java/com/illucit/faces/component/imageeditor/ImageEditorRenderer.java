@@ -1,9 +1,6 @@
 package com.illucit.faces.component.imageeditor;
 
-import static org.primefaces.application.resource.DynamicContentType.STREAMED_CONTENT;
-
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 
 import javax.faces.component.UIComponent;
@@ -12,6 +9,7 @@ import javax.faces.context.ResponseWriter;
 
 import org.primefaces.renderkit.CoreRenderer;
 import org.primefaces.util.DynamicContentSrcBuilder;
+import org.primefaces.util.Lazy;
 import org.primefaces.util.WidgetBuilder;
 
 /**
@@ -31,7 +29,7 @@ public class ImageEditorRenderer extends CoreRenderer {
 	}
 
 	@Override
-	public void encodeChildren(FacesContext context, UIComponent component) throws IOException {
+	public void encodeChildren(FacesContext context, UIComponent component) {
 		// Do nothing
 	}
 
@@ -68,9 +66,8 @@ public class ImageEditorRenderer extends CoreRenderer {
 	}
 
 	protected void encodeScript(FacesContext context, ImageEditor editor) throws IOException {
-		String clientId = editor.getClientId(context);
 		WidgetBuilder wb = getWidgetBuilder(context);
-		wb.init("ImageEditor", editor.resolveWidgetVar(), clientId);
+		wb.init("ImageEditor", editor);
 		wb.attr("imageSource", getImageSrc(context, editor));
 		wb.attr("initialShape", editor.getInitialShape());
 		wb.callback("onsuccess", "function()", editor.getOnsuccess());
@@ -79,7 +76,9 @@ public class ImageEditorRenderer extends CoreRenderer {
 	}
 
 	protected String getImageSrc(FacesContext context, ImageEditor editor) {
-		return DynamicContentSrcBuilder.build(context, editor.getValue(), editor, false, STREAMED_CONTENT, true);
+		return DynamicContentSrcBuilder.build(context, editor,
+				editor.getValueExpression(ImageEditor.PropertyKeys.value.name()),
+				new Lazy<>(editor::getValue),false, true);
 	}
 
 	@Override

@@ -14,7 +14,7 @@ commonly used [PrimeFaces](http://www.primefaces.org) widget library.
 **Copyright**: illucIT Software GmbH  
 **URL**: [www.illucit.com](https://www.illucit.com)  
 **License**: [The Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)  
-**Current Version**: 2.2.0
+**Current Version**: 3.0.0
 
 ![Screenshot](screenshot.png)
 
@@ -22,13 +22,14 @@ commonly used [PrimeFaces](http://www.primefaces.org) widget library.
 Compatibility:
 --------------
 
-*ImageEditor* is written for and tested with **PrimeFaces 8.0** and **JSF 2.3** (also backwards compatible to JSF 2.2).
+*ImageEditor* is written for and tested with **PrimeFaces 10.0** and **JSF 2.3** (also backwards compatible to JSF 2.2).
 Due to changes in the PrimeFaces API for streamed data, the library is not compatible with earlier PrimeFaces versions without modifications.
 
 In order to use the ImageEditor component with a specific PrimeFaces version, please see the compatibility table below:
 
 | ImageEditor Version   | PrimeFaces Version   | Required Java Version |
 | --------------------- | -------------------- | --------------------- |
+| ImageEditor **3.0.0** | PrimeFaces **10.0**  | Java 8+               |
 | ImageEditor **2.2.0** | PrimeFaces **8.0**   | Java 8+               |
 | ImageEditor **2.1.0** | PrimeFaces **7.0**   | Java 8+               |
 | ImageEditor **2.0.0** | PrimeFaces **6.2**   | Java 8+               |
@@ -80,7 +81,7 @@ Then you can use the `imageEditor` tag in your facelet file.
 	</ie:imageEditor>
 
 The following parameters are required for the `imageEditor` component to work correctly:
-* `value`: Expression of a method returing a `StreamedContent` object containing the image data.
+* `value`: Expression of a method returning a `StreamedContent` object containing the image data.
 Every parameter child element of type `<f:param />` will be attached to the image request.  
 Note: As the image is requested by a normal GET request, no view scope can be used for this as the view id will not be transmitted.
 * `fileUploadListener`: Bean method accepting an `ImageEditedEvent` object.

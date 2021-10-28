@@ -13,9 +13,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 		this.rotateCWButton = $(this.jqId + '_rotate-cw-button');
 		this.rotateCCWButton = $(this.jqId + '_rotate-ccw-button');
 		this.undoButton = $(this.jqId + '_undo-button');
-		this.colorChooser = this.jq.find('input[type=color]');
-		
-		this.form = this.jq.closest('form');
+		this.colorChooser = $(this.jqId + '_color_input');
 
 		if (refreshOnly !== true) {
 			this.initState();
@@ -43,7 +41,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 			// Settings for new shapes
 			shapeType: 'rect',
 			strokeSize: 5,
-			color: this.colorChooser.val(),
+			color: '#' + this.colorChooser.val(),
 			
 			// Drawing
 			down: false,
@@ -118,7 +116,7 @@ PrimeFaces.widget.ImageEditor = PrimeFaces.widget.BaseWidget.extend({
 			$this.onMouseUp(event);
 		});
 		this.colorChooser.on('change', function(event) {
-			$this.state.color = $this.colorChooser.val();
+			$this.state.color = '#' + $this.colorChooser.val();
 		});
 	},
 	
